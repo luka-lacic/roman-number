@@ -32,7 +32,7 @@ jobs:
       - name: 2. Run Unit Tests
         run: mvn test
 
-      # ----analisi statica del codice (Checkstyle)-----------------------
+      # ----analisi statica del codice (Checkstyle)-------------------------------------
       # eseguita nella fase di package. Se Checkstyle trova violazioni, la build fallisce 
       - name: 3. Static Analysis (Checkstyle)
         run: mvn checkstyle:check
