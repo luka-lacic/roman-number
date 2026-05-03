@@ -1,0 +1,45 @@
+name: Java CI Pipeline
+
+# trigger: la pipeline parte ad ogni push o Pull Request sui branch principali e di feature
+on:
+  push:
+    branches: [ "main", "master", "develop", "feature/*" ]
+  pull_request:
+    branches: [ "main", "master", "develop" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      # ----compilazione del progetto---------
+      # fallisce se ci sono errori di sintassi
+      - name: 1. Compile Project
+        run: mvn compile
+
+      # ----esecuzione dei test di unità-------
+      # fallisce se uno o più test non passano
+      - name: 2. Run Unit Tests
+        run: mvn test
+
+      # ----analisi statica del codice (Checkstyle)-----------------------
+      # eseguita nella fase di package. Se Checkstyle trova violazioni, la build fallisce 
+      - name: 3. Static Analysis (Checkstyle)
+        run: mvn checkstyle:check
+
+      # generazione report Coverage e invio a Coveralls
+      # DA FARE: richiede configurazione segreto COVERALLS_REPO_TOKEN su GitHub
+      #- name: 4. Code Coverage Report
+      #  run: mvn jacoco:report coveralls:report
+      #  env:
+      #    REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
