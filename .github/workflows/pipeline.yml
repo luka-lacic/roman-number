@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
-    # LA MAGIA È QUI: diciamo alla pipeline di eseguire tutti i comandi 'run' dentro la sottocartella
+    # aggiunta working directory per entrare nella cartella del progetto
     defaults:
       run:
         working-directory: ./roman-number
@@ -43,8 +43,7 @@ jobs:
         run: mvn checkstyle:check
 
       # generazione report Coverage e invio a Coveralls
-      # DA FARE: richiede configurazione segreto COVERALLS_REPO_TOKEN su GitHub
-      #- name: 4. Code Coverage Report
-      #  run: mvn jacoco:report coveralls:report
-      #  env:
-      #    REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+      - name: 4. Code Coverage Report
+        run: mvn jacoco:report coveralls:report
+        env:
+          REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
