@@ -3,7 +3,7 @@
 "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
 <module name="Checker">
   <module name="RegexpHeader">
-    <property name="headerFile" value="header.txt"/>
+    <property name="header" value="////////////////////////////////////////////////////////////////////\n// JATIN BAJAJ 2138010\n// LUKA LACIC 2145595\n////////////////////////////////////////////////////////////////////"/>
   </module>
   <module name="TreeWalker">
     <module name="BooleanExpressionComplexity"/>
