@@ -10,6 +10,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    # LA MAGIA È QUI: diciamo alla pipeline di eseguire tutti i comandi 'run' dentro la sottocartella
+    defaults:
+      run:
+        working-directory: ./roman-number
 
     steps:
       - name: Checkout code
