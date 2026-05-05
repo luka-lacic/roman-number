@@ -35,6 +35,18 @@ public class RomanPrinterTest {
             "    \\/      ";
         assertEquals(expected, result);
     }
+    @Test
+    public void testPrint_WithNumberTen_ShouldReturnAsciiX() {
+        String result = RomanPrinter.print(10);
+        String expected = 
+            "__   __ \n" +
+            "\\ \\ / / \n" +
+            " \\ V /  \n" +
+            "  > <   \n" +
+            " / . \\  \n" +
+            "/_/ \\_\\ ";
+        assertEquals(expected, result);
+    }
     
     @Test(expected = IllegalArgumentException.class)
     public void testPrint_WithInvalidNumber_ShouldThrowException() {
