@@ -5,21 +5,35 @@
 
 package it.unipd.mtss;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class RomanPrinterTest {
 
     @Test
-    public void testPrint_WithValidNumber_ShouldReturnNonEmptyString() {
-        
-        int number = 1;
-        
-        String result = RomanPrinter.print(number);
-        
-        assertNotNull(result);
-        assertTrue(result.contains("|")); 
+    public void testPrint_WithNumberOne_ShouldReturnAsciiI() {
+        String result = RomanPrinter.print(1);
+        String expected = 
+            " _____  \n" +
+            "|_   _| \n" +
+            "  | |   \n" +
+            "  | |   \n" +
+            "  | |   \n" +
+            " |___|  ";
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testPrint_WithNumberFive_ShouldReturnAsciiV() {
+        String result = RomanPrinter.print(5);
+        String expected = 
+            "_      _  \n" +
+            "\\ \\    / /  \n" +
+            " \\ \\  / /   \n" +
+            "  \\ \\/ /    \n" +
+            "   \\  /     \n" +
+            "    \\/      ";
+        assertEquals(expected, result);
     }
     
     @Test(expected = IllegalArgumentException.class)
