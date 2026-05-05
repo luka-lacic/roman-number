@@ -11,23 +11,31 @@ import org.junit.Test;
 public class IntegerToRomanTest {
 
     @Test
-    public void testConvertNumberOne() {
+    public void testConvert_WithNumberOne_ShouldReturnRomanI() {
         int number = 1;
         String roman = IntegerToRoman.convert(number);
         assertEquals("I", roman);
     }
 
     @Test
-    public void testConvertNumberTwo() {
+    public void testConvert_WithNumberTwo_ShouldReturnRomanII() {
         int number = 2;
         String roman = IntegerToRoman.convert(number);
         assertEquals("II", roman);
     }
 
     @Test
-    public void testConvertNumberThree() {
+    public void testConvert_WithNumberThree_ShouldReturnRomanIII() {
         int number = 3;
         String roman = IntegerToRoman.convert(number);
         assertEquals("III", roman);
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void testConvert_WithZero_ShouldThrowException() {
+        IntegerToRoman.convert(0);
+    }
+   @Test(expected = IllegalArgumentException.class)
+    public void testConvert_WithNegative_ShouldThrowException() {
+        IntegerToRoman.convert(-1);
     }
 }

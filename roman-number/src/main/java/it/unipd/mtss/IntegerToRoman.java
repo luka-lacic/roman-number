@@ -8,6 +8,9 @@ package it.unipd.mtss;
 public class IntegerToRoman {
     
     public static String convert(int number) {
+        if (number < 1 || number > 3) {
+            throw new IllegalArgumentException("Range non valido");
+        }
         StringBuilder roman = new StringBuilder();
         for (int i = 0; i < number; i++) {
             roman.append("I");
