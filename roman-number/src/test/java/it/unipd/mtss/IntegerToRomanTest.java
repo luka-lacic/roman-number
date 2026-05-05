@@ -30,10 +30,33 @@ public class IntegerToRomanTest {
         String roman = IntegerToRoman.convert(number);
         assertEquals("III", roman);
     }
+
+    @Test
+    public void testConvert_WithNumberFour_ShouldReturnRomanIV() {
+        int number = 4;
+        String roman = IntegerToRoman.convert(number);
+        assertEquals("IV", roman);
+    }
+
+    @Test
+    public void testConvert_WithNumberFive_ShouldReturnRomanV() {
+        int number = 5;
+        String roman = IntegerToRoman.convert(number);
+        assertEquals("V", roman);
+    }
+
+    @Test
+    public void testConvert_WithNumberSix_ShouldReturnRomanVI() {
+        int number = 6;
+        String roman = IntegerToRoman.convert(number);
+        assertEquals("VI", roman);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void testConvert_WithZero_ShouldThrowException() {
         IntegerToRoman.convert(0);
     }
+    
    @Test(expected = IllegalArgumentException.class)
     public void testConvert_WithNegative_ShouldThrowException() {
         IntegerToRoman.convert(-1);
