@@ -35,6 +35,7 @@ public class RomanPrinterTest {
             "    \\/      ";
         assertEquals(expected, result);
     }
+    
     @Test
     public void testPrint_WithNumberTen_ShouldReturnAsciiX() {
         String result = RomanPrinter.print(10);

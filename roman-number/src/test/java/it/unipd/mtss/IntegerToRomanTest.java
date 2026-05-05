@@ -52,15 +52,6 @@ public class IntegerToRomanTest {
         assertEquals("VI", roman);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testConvert_WithZero_ShouldThrowException() {
-        IntegerToRoman.convert(0);
-    }
-    
-   @Test(expected = IllegalArgumentException.class)
-    public void testConvert_WithNegative_ShouldThrowException() {
-        IntegerToRoman.convert(-1);
-    }
     @Test
     public void testConvert_WithNumberNine_ShouldReturnRomanIX() {
         assertEquals("IX", IntegerToRoman.convert(9));
@@ -71,8 +62,33 @@ public class IntegerToRomanTest {
         assertEquals("X", IntegerToRoman.convert(10));
     }
 
+    @Test
+    public void testConvert_WithNumberFourteen_ShouldReturnRomanXIV() {
+        assertEquals("XIV", IntegerToRoman.convert(14));
+    }
+
+    @Test
+    public void testConvert_WithNumberNineteen_ShouldReturnRomanXIX() {
+        assertEquals("XIX", IntegerToRoman.convert(19));
+    }
+
+    @Test
+    public void testConvert_WithNumberTwenty_ShouldReturnRomanXX() {
+        assertEquals("XX", IntegerToRoman.convert(20));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testConvert_WithZero_ShouldThrowException() {
+        IntegerToRoman.convert(0);
+    }
+    
+   @Test(expected = IllegalArgumentException.class)
+    public void testConvert_WithNegative_ShouldThrowException() {
+        IntegerToRoman.convert(-1);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void testConvert_OverRange_ShouldThrowException() {
-        IntegerToRoman.convert(11); 
+        IntegerToRoman.convert(21); 
     }
 }
