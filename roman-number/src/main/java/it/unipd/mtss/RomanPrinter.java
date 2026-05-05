@@ -28,6 +28,13 @@ public class RomanPrinter {
                 lines[3] += "  \\ \\/ /    ";
                 lines[4] += "   \\  /     ";
                 lines[5] += "    \\/      ";
+            } else if (c == 'X') {
+                lines[0] += "__   __ ";
+                lines[1] += "\\ \\ / / ";
+                lines[2] += " \\ V /  ";
+                lines[3] += "  > <   ";
+                lines[4] += " / . \\  ";
+                lines[5] += "/_/ \\_\\ ";
             }
         }
         return String.join("\n", lines);

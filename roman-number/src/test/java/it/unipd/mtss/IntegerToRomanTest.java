@@ -61,4 +61,18 @@ public class IntegerToRomanTest {
     public void testConvert_WithNegative_ShouldThrowException() {
         IntegerToRoman.convert(-1);
     }
+    @Test
+    public void testConvert_WithNumberNine_ShouldReturnRomanIX() {
+        assertEquals("IX", IntegerToRoman.convert(9));
+    }
+
+    @Test
+    public void testConvert_WithNumberTen_ShouldReturnRomanX() {
+        assertEquals("X", IntegerToRoman.convert(10));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testConvert_OverRange_ShouldThrowException() {
+        IntegerToRoman.convert(11); 
+    }
 }
