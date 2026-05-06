@@ -74,6 +74,18 @@ public class RomanPrinterTest {
             " \\_____| ";
         assertEquals(expected, result);
     }
+    @Test
+    public void testPrint_WithNumberFiveHundred_ShouldReturnAsciiD() {
+        String result = RomanPrinter.print(500);
+        String expected = 
+            " _____    \n" +
+            "|  __ \\   \n" +
+            "| |  | |  \n" +
+            "| |  | |  \n" +
+            "| |__| |  \n" +
+            "|_____/   ";
+        assertEquals(expected, result);
+    }
     
     @Test(expected = IllegalArgumentException.class)
     public void testPrint_WithInvalidNumber_ShouldThrowException() {
