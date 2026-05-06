@@ -48,6 +48,7 @@ public class RomanPrinterTest {
             "/_/ \\_\\ ";
         assertEquals(expected, result);
     }
+
     @Test
     public void testPrint_WithNumberFifty_ShouldReturnAsciiL() {
         String result = RomanPrinter.print(50);
@@ -58,6 +59,19 @@ public class RomanPrinterTest {
             "| |       \n" +
             "| |____   \n" +
             "|______|  ";
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testPrint_WithNumberOneHundred_ShouldReturnAsciiC() {
+        String result = RomanPrinter.print(100);
+        String expected = 
+            "  _____  \n" +
+            " / ____| \n" +
+            "| |      \n" +
+            "| |      \n" +
+            "| |____  \n" +
+            " \\_____| ";
         assertEquals(expected, result);
     }
     
