@@ -106,6 +106,16 @@ public class IntegerToRomanTest {
         assertEquals("D", IntegerToRoman.convert(500));
     }
 
+    @Test
+    public void testConvert_WithNumberNinehundredNinetynine_ShouldReturnRomanCMXCIX() {
+        assertEquals("CMXCIX", IntegerToRoman.convert(999));
+    }
+
+    @Test
+    public void testConvert_WithNumberOneThousand_ShouldReturnRomanM() {
+        assertEquals("M", IntegerToRoman.convert(1000));
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void testConvert_WithZero_ShouldThrowException() {
         IntegerToRoman.convert(0);
@@ -118,6 +128,6 @@ public class IntegerToRomanTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testConvert_OverRange_ShouldThrowException() {
-        IntegerToRoman.convert(501); 
+        IntegerToRoman.convert(1001); 
     }
 }
