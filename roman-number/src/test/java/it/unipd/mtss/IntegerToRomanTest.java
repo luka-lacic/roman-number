@@ -76,6 +76,15 @@ public class IntegerToRomanTest {
     public void testConvert_WithNumberTwenty_ShouldReturnRomanXX() {
         assertEquals("XX", IntegerToRoman.convert(20));
     }
+    @Test
+    public void testConvert_WithNumberForty_ShouldReturnRomanXL() {
+        assertEquals("XL", IntegerToRoman.convert(40));
+    }
+
+    @Test
+    public void testConvert_WithNumberFifty_ShouldReturnRomanL() {
+        assertEquals("L", IntegerToRoman.convert(50));
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testConvert_WithZero_ShouldThrowException() {
@@ -87,8 +96,10 @@ public class IntegerToRomanTest {
         IntegerToRoman.convert(-1);
     }
 
+    
+
     @Test(expected = IllegalArgumentException.class)
     public void testConvert_OverRange_ShouldThrowException() {
-        IntegerToRoman.convert(21); 
+        IntegerToRoman.convert(51); 
     }
 }

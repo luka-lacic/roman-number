@@ -8,12 +8,12 @@ package it.unipd.mtss;
 public class IntegerToRoman {
     
     public static String convert(int number) {
-        if (number < 1 || number > 20) {
+        if (number < 1 || number > 50) {
             throw new IllegalArgumentException("Range non valido");
         }
         
-        int[] values = {10, 9, 5, 4, 1};
-        String[] symbols = {"X", "IX", "V", "IV", "I"};
+        int[] values = {50, 40, 10, 9, 5, 4, 1};
+        String[] symbols = {"L", "XL","X", "IX", "V", "IV", "I"};
         
         StringBuilder roman = new StringBuilder();
 
