@@ -27,7 +27,7 @@ public class RomanPrinterTest {
     public void testPrint_WithNumberFive_ShouldReturnAsciiV() {
         String result = RomanPrinter.print(5);
         String expected = 
-            "_      _  \n" +
+            "__      __  \n" +
             "\\ \\    / /  \n" +
             " \\ \\  / /   \n" +
             "  \\ \\/ /    \n" +
@@ -46,6 +46,18 @@ public class RomanPrinterTest {
             "  > <   \n" +
             " / . \\  \n" +
             "/_/ \\_\\ ";
+        assertEquals(expected, result);
+    }
+    @Test
+    public void testPrint_WithNumberFifty_ShouldReturnAsciiL() {
+        String result = RomanPrinter.print(50);
+        String expected = 
+            " _        \n" +
+            "| |       \n" +
+            "| |       \n" +
+            "| |       \n" +
+            "| |____   \n" +
+            "|______|  ";
         assertEquals(expected, result);
     }
     

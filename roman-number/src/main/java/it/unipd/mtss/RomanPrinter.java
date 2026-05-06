@@ -22,7 +22,7 @@ public class RomanPrinter {
                 lines[4] += "  | |   ";
                 lines[5] += " |___|  ";
             } else if (c == 'V') {
-                lines[0] += "_      _  ";
+                lines[0] += "__      __  ";
                 lines[1] += "\\ \\    / /  ";
                 lines[2] += " \\ \\  / /   ";
                 lines[3] += "  \\ \\/ /    ";
@@ -35,6 +35,13 @@ public class RomanPrinter {
                 lines[3] += "  > <   ";
                 lines[4] += " / . \\  ";
                 lines[5] += "/_/ \\_\\ ";
+            } else if (c == 'L') {
+                lines[0] += " _        ";
+                lines[1] += "| |       ";
+                lines[2] += "| |       ";
+                lines[3] += "| |       ";
+                lines[4] += "| |____   ";
+                lines[5] += "|______|  ";
             }
         }
         return String.join("\n", lines);
