@@ -74,6 +74,7 @@ public class RomanPrinterTest {
             " \\_____| ";
         assertEquals(expected, result);
     }
+
     @Test
     public void testPrint_WithNumberFiveHundred_ShouldReturnAsciiD() {
         String result = RomanPrinter.print(500);
@@ -86,10 +87,43 @@ public class RomanPrinterTest {
             "|_____/   ";
         assertEquals(expected, result);
     }
+
+    // Controllare gli spazi
+    // @Test
+    // public void testPrint_WithNumberNinehundredNinetynine_ShouldReturnAsciiCMXCIX() {
+    //     String result = RomanPrinter.print(999);
+    //     String expected = 
+    //         "  _____   __  __  __   __   _____   _____  __   __ \n" +
+    //         " / ____| |  \\/  | \\ \\ / /  / ____| |_   _| \\ \\ / / \n" +
+    //         "| |      | \\  / |  \\ V /  | |        | |    \\ V /  \n" +
+    //         "| |      | |\\/| |   > <   | |        | |     > <   \n" +
+    //         "| |____  | |  | |  / . \\  | |____    | |    / . \\  \n" +
+    //         " \\_____| |_|  |_| /_/ \\_\\  \\_____|  |___|  /_/ \\_\\ \n";
+    //     assertEquals(expected, result);
+    // }
+
+    @Test
+    public void testPrint_WithNumberOneThousand_ShouldReturnAsciiM() {
+        String result = RomanPrinter.print(1000);
+        String expected = 
+            " __  __  \n" +
+            "|  \\/  | \n" +
+            "| \\  / | \n" +
+            "| |\\/| | \n" +
+            "| |  | | \n" +
+            "|_|  |_| ";
+        assertEquals(expected, result);
+    }
     
     @Test(expected = IllegalArgumentException.class)
-    public void testPrint_WithInvalidNumber_ShouldThrowException() {
+    public void testPrint_WithInvalidNumberSmaller_ShouldThrowException() {
  
         RomanPrinter.print(0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testPrint_WithInvalidNumberBigger_ShouldThrowException() {
+ 
+        RomanPrinter.print(1001);
     }
 }
